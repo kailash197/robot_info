@@ -122,7 +122,7 @@ include_directories(
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/robot_info.cpp
-# )
+# )asdfasdf
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -148,7 +148,14 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-
+add_executable(robot_info_node src/robot_info_class.cpp src/robot_info_main.cpp)
+add_executable(agv_robot_info_node src/robot_info_class.cpp src/agv_robot_info_class.cpp src/agv_robot_info_main.cpp)
+target_link_libraries(robot_info_node
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(agv_robot_info_node
+  ${catkin_LIBRARIES}
+)
 #############
 ## Install ##
 #############
